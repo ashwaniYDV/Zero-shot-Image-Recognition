@@ -1,8 +1,7 @@
 # Academic Project (CS244-Introduction to data science)
-Image classification: Zero-shot Image Recognition Using Relational Matching,
-Adaptation and Calibration
+### Image classification: Zero-shot Image Recognition Using Relational Matching, Adaptation and Calibration
 
-# zero-shot-learning
+## zero-shot-learning
 Implementation of Zero-Shot Learning algorithm  
 
   
@@ -15,7 +14,7 @@ arm, boy, bread, chicken, child, computer, ear, house, leg, sandwich, television
 **Zero-Shot Classes:**  
 car, food, hand, man, neck  
   
-## Usage  
+### Usage  
 $**python3**  detect_object.py  input-image-path  
   
 ### Example  
