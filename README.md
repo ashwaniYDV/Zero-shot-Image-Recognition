@@ -1,5 +1,5 @@
 # Academic Project (CS244-Introduction to data science)
-Image classification: Zero-shot Image Recognition Using RelationalMatching,
+Image classification: Zero-shot Image Recognition Using Relational Matching,
 Adaptation and Calibration
 
 # zero-shot-learning
@@ -28,7 +28,7 @@ $**python3**  detect_object.py  ../test.jpg
 **->** 4- house  
 **->** 5- chicken  
   
-![Example Image](https://github.com/ashwaniYV/Zero-shot-Image-Recognition/blob/master/test.jpg)  
+![Example Image](https://raw.githubusercontent.com/ashwaniYDV/Zero-shot-Image-Recognition/master/test.jpg)  
 *Test image is a beautiful green Jaguar E-Type.*  
 *All related prediction results are ranked in first three.* 
   
