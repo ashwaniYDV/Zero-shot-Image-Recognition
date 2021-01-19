@@ -1,5 +1,5 @@
-# Academic Project (CS244-Introduction to data science)
-### Image classification: Zero-shot Image Recognition Using Relational Matching, Adaptation and Calibration
+# Zero-shot Image Recognition: Image classification
+### Academic Project (CS244-Introduction to data science)
 
 ## zero-shot-learning
 Implementation of Zero-Shot Learning algorithm  
