@@ -20,12 +20,13 @@ $ **python3**  detect_object.py  input-image-path
 ### Example  
 $ **cd**  src  
 $ **python3**  detect_object.py  ../test.jpg
-**->** --- Top-5 Prediction ---  
-**->** 1- vehicle  
-**->** 2- truck  
-**->** 3- car  
-**->** 4- house  
-**->** 5- watch  
+
+--- Top-5 Prediction ---  
+1- vehicle  
+2- truck  
+3- car  
+4- house  
+5- watch  
   
 ![Example Image](test.jpg)
 
