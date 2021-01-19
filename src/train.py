@@ -101,7 +101,7 @@ def load_data():
     return (x_train, x_valid, x_zsl), (y_train, y_valid, y_zsl)
 
 
-def custom_kernel_init(shape):
+def custom_kernel_init(shape, dtype=None):
     class_vectors       = np.load(WORD2VECPATH,allow_pickle=True)
     training_vectors    = sorted([(label, vec) for (label, vec) in class_vectors if label in train_classes], key=lambda x: x[0])
     classnames, vectors = zip(*training_vectors)
@@ -118,7 +118,9 @@ def  build_model():
     model.add(Dropout(0.5))
     model.add(Dense(256, activation='relu'))
     model.add(Dense(NUM_ATTR, activation='relu'))
+    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
     model.add(Dense(NUM_CLASS, activation='softmax', trainable=False, kernel_initializer=custom_kernel_init))
+    print('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
 
     print("-> model building is completed.")
     return model
