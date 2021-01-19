@@ -102,7 +102,7 @@ def load_data():
 
 
 def custom_kernel_init(shape):
-    class_vectors       = np.load(WORD2VECPATH)
+    class_vectors       = np.load(WORD2VECPATH,allow_pickle=True)
     training_vectors    = sorted([(label, vec) for (label, vec) in class_vectors if label in train_classes], key=lambda x: x[0])
     classnames, vectors = zip(*training_vectors)
     vectors             = np.asarray(vectors, dtype=np.float)
@@ -187,7 +187,7 @@ def main():
     #(x_train, x_valid, x_zsl), (y_train, y_valid, y_zsl) = load_data()
     #zsl_model = load_keras_model(model_path=MODELPATH)
 
-    class_vectors       = sorted(np.load(WORD2VECPATH), key=lambda x: x[0])
+    class_vectors       = sorted(np.load(WORD2VECPATH, allow_pickle=True), key=lambda x: x[0])
     classnames, vectors = zip(*class_vectors)
     classnames          = list(classnames)
     vectors             = np.asarray(vectors, dtype=np.float)

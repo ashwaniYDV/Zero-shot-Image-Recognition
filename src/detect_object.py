@@ -34,23 +34,11 @@ def main(argv):
     # MAKE PREDICTION
     pred        = model.predict(img_feature)
 
-
-
-    # save np.load
-    np_load_old = np.load
-
-    # modify the default parameters of np.load
-    np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
-
-
     # LOAD CLASS WORD2VECS
-    class_vectors       = sorted(np.load(WORD2VECPATH), key=lambda x: x[0])
+    class_vectors       = sorted(np.load(WORD2VECPATH, allow_pickle=True), key=lambda x: x[0])
     classnames, vectors = zip(*class_vectors)
     classnames          = list(classnames)
     vectors             = np.asarray(vectors, dtype=np.float)
-
-    # restore np.load for future normal usage
-    np.load = np_load_old
 
     # PLACE WORD2VECS IN KDTREE
     tree                = KDTree(vectors)
