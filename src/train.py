@@ -39,7 +39,7 @@ def save_keras_model(model, model_path):
 
     # serialize weights to HDF5
     model.save_weights(model_path + "model.h5")
-    print("-> zsl model is saved.")
+    print("-> ZSL model is saved.")
     return
 
 def load_data():
@@ -97,7 +97,7 @@ def load_data():
     # L2 NORMALIZE X_ZSL
     x_zsl = normalize(x_zsl, norm='l2')
 
-    print("-> data loading is completed.")
+    print("-> Data loading is completed.")
     return (x_train, x_valid, x_zsl), (y_train, y_valid, y_zsl)
 
 
@@ -118,11 +118,9 @@ def  build_model():
     model.add(Dropout(0.5))
     model.add(Dense(256, activation='relu'))
     model.add(Dense(NUM_ATTR, activation='relu'))
-    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
     model.add(Dense(NUM_CLASS, activation='softmax', trainable=False, kernel_initializer=custom_kernel_init))
-    print('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
 
-    print("-> model building is completed.")
+    print("-> Model building is completed.")
     return model
 
 
@@ -141,7 +139,7 @@ def train_model(model, train_data, valid_data):
                         batch_size      = BATCH_SIZE,
                         shuffle         = True)
 
-    print("model training is completed.")
+    print("Model training is completed.")
     return history
 
 def main():
@@ -171,6 +169,7 @@ def main():
     (x_train, x_valid, x_zsl), (y_train, y_valid, y_zsl) = load_data()
     model = build_model()
     train_model(model, (x_train, y_train), (x_valid, y_valid))
+    print('Model Summary:')
     print(model.summary())
 
     # ---------------------------------------------------------------------------------------------------------------- #
@@ -180,14 +179,12 @@ def main():
     inp         = model.input
     out         = model.layers[-2].output
     zsl_model   = Model(inp, out)
+    print('ZSL Model Summary:')
     print(zsl_model.summary())
     save_keras_model(zsl_model, model_path=MODELPATH)
 
     # ---------------------------------------------------------------------------------------------------------------- #
     # ---------------------------------------------------------------------------------------------------------------- #
-    # EVALUATION OF ZERO-SHOT LEARNING PERFORMANCE
-    #(x_train, x_valid, x_zsl), (y_train, y_valid, y_zsl) = load_data()
-    #zsl_model = load_keras_model(model_path=MODELPATH)
 
     class_vectors       = sorted(np.load(WORD2VECPATH, allow_pickle=True), key=lambda x: x[0])
     classnames, vectors = zip(*class_vectors)
