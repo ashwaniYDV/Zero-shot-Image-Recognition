@@ -15,21 +15,27 @@ arm, boy, bread, chicken, child, computer, ear, house, leg, sandwich, television
 car, food, hand, man, neck  
   
 ### Usage  
-$**python3**  detect_object.py  input-image-path  
+$ **python3**  detect_object.py  input-image-path  
   
 ### Example  
-$**cd**  src  
-$**python3**  detect_object.py  ../test.jpg  
+$ **cd**  src  
+$ **python3**  detect_object.py  ../test.jpg
 **->** --- Top-5 Prediction ---  
 **->** 1- vehicle  
 **->** 2- truck  
 **->** 3- car  
 **->** 4- house  
-**->** 5- chicken  
+**->** 5- watch  
   
-![Example Image](https://raw.githubusercontent.com/ashwaniYDV/Zero-shot-Image-Recognition/master/test.jpg)  
-*Test image is a beautiful green Jaguar E-Type.*  
+![Example Image](test.jpg)
+
+*Test image is a beautiful green Jaguar.*  
 *All related prediction results are ranked in first three.* 
   
 P.S. Remember, the prediction results are only allowed to be among above classes (train and zero-shot classes).  
 Algorithm will fail (although it will do its best to predict most related class) in case you try to detect an object from different other classes.
+
+### Model Summary 
+![Example Image](model.png)
+### ZSL Model Summary
+![Example Image](zslmodel.png)
