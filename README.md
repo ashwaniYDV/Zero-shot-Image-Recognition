@@ -30,7 +30,7 @@ $ **python3**  detect_object.py  ../test.jpg
   
 ![Example Image](test.jpg)
 
-*Test image is a beautiful green Jaguar.*  
+*Test image is a beautiful Jaguar.*  
 *All related prediction results are ranked in first three.* 
   
 P.S. Remember, the prediction results are only allowed to be among above classes (train and zero-shot classes).  
